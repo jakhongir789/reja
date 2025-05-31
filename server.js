@@ -1,3 +1,5 @@
+// Express => Nodejsda web serverlarni quradigan framework.
+
 console.log("Web Serverni boshladik");
 const express = require("express");
 const app = express(); // expressni App objectini yaratdik
@@ -16,12 +18,23 @@ app.set("views", "views"); //view degan folderni korsatadi
 app.set("view engine", "ejs"); // viewni yasash ejs orqali
 
 // 4 ROUTING Code:
-app.get("/hello", function (req, res) {
-  res.end(`<h1 style="background: red">Hello World by Justin</h1>`);
+
+////test
+// app.get("/hello", function (req, res) {
+//   res.end(`<h1 style="background: red">Hello World by Justin</h1>`);
+// });
+
+// app.get("/gift", function (req, res) {
+//   res.end(`<h1 style="background: red">Siz sovgalar bolimidasiz</h1>`);
+// });
+
+app.post("/create-item", (req, res) => {
+  console.log(req);
+  res.json({ test: "success" });
 });
 
-app.get("/gift", function (req, res) {
-  res.end(`<h1 style="background: red">Siz sovgalar bolimidasiz</h1>`);
+app.get("/", function (req, res) {
+  res.render("harid");
 });
 
 const server = http.createServer(app);
