@@ -49,17 +49,222 @@
             </div>
           </div>
           <div class="marginer"></div>
-          <div class="left_2"></div>
+          <div class="left_2">
+            <div class="left2-1">
+              <span>Age:</span>
+              <p><%=user.age%></p>
+            </div>
+            <div class="left2-1">
+              <span>Residence:</span>
+              <p><%=user.residence%></p>
+            </div>
+            <div class="left2-1">
+              <span>Freelance:</span>
+              <p style="color: #7eb942">Available</p>
+            </div>
+            <div class="left2-1">
+              <span>Address:</span>
+              <p><%=user.address%></p>
+            </div>
+          </div>
           <div class="marginer"></div>
-          <div class="left_3"></div>
+          <div class="left_3">
+            <div class="lang">Languages</div>
+            <div class="lang_list">
+              <span><%= user.languages[0] %></span>
+              <span>100%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 100%"></div>
+            </div>
+            <div class="lang_list">
+              <span><%= user.languages[1] %></span>
+              <span>80%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 80%"></div>
+            </div>
+            <div class="lang_list">
+              <span><%= user.languages[2] %></span>
+              <span>60%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 60%"></div>
+            </div>
+          </div>
           <div class="marginer"></div>
-          <div class="left_4"></div>
+          <div class="left_4">
+            <div class="skill">Skills</div>
+            <div class="skill_list">
+              <span><%= user.skills[0] %></span>
+              <span>90%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 90%"></div>
+            </div>
+            <div class="skill_list">
+              <span><%= user.skills[1] %></span>
+              <span>85%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 85%"></div>
+            </div>
+            <div class="skill_list">
+              <span><%= user.skills[2] %></span>
+              <span>80%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 80%"></div>
+            </div>
+            <div class="skill_list">
+              <span><%= user.skills[3] %></span>
+              <span>75%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 75%"></div>
+            </div>
+            <div class="skill_list">
+              <span><%= user.skills[4] %></span>
+              <span>85%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 85%"></div>
+            </div>
+          </div>
           <div class="marginer"></div>
-          <div class="left_5"></div>
+          <div class="left_5">
+            <div class="extra">Extra Skills</div>
+            <div class="extra_list">
+              <img src="icon/extra_icon.png" alt="" />
+              <span style="margin-left: 10px"
+                ><%= user["extra skills"][0] %></span
+              >
+            </div>
+            <div class="extra_list">
+              <img src="icon/extra_icon.png" alt="" />
+              <span style="margin-left: 10px"
+                ><%= user["extra skills"][1] %></span
+              >
+            </div>
+            <div class="extra_list">
+              <img src="icon/extra_icon.png" alt="" />
+              <span style="margin-left: 10px"
+                ><%= user["extra skills"][2] %></span
+              >
+            </div>
+            <div class="extra_list">
+              <img src="icon/extra_icon.png" alt="" />
+              <span style="margin-left: 10px"
+                ><%= user["extra skills"][3] %></span
+              >
+            </div>
+          </div>
           <div class="marginer"></div>
         </div>
-        <div class="center_frame"></div>
-        <div class="right_frame"></div>
+
+        <div class="center_frame">
+          <div class="top">
+            <div class="container">
+              <img class="blue" src="images/blue.svg" />
+              <img class="yellow" src="images/yellow.svg" alt="" />
+              <img class="yellow2" src="images/yellow.svg" alt="" />
+              <img class="red" src="images/red.svg" alt="" />
+              <img class="green" src="images/green.svg" alt="" />
+              <img class="green2" src="images/green.svg" alt="" />
+              <img class="yellow4" src="images/yellow4.png" alt="" />
+
+              <div class="work-place"><%= user["work place"] %></div>
+              <div class="about-me"><%= user["about me"] %></div>
+              <div>
+                <button class="hire-btn">
+                  HIRE ME
+                  <img
+                    src="icon/arrow-right.svg"
+                    style="height: 16px; width: 16px"
+                    alt=""
+                  />
+                </button>
+              </div>
+              <div
+                class="img"
+                style="background-image: url(images/profile-big.png)"
+              ></div>
+            </div>
+          </div>
+          <div class="bott">
+            <div class="bott1">
+              <div class="service">My Services</div>
+              <div class="service-desc"><%= user["service desc"] %></div>
+            </div>
+            <div class="bott2">
+              <div class="info">
+                <img src="images/web.svg" alt="" />
+                <span>Web Development</span>
+                <p>Blog, E-commerce</p>
+              </div>
+              <div class="info">
+                <img src="images/design.jpg" alt="" />
+                <span>UI/UX Design</span>
+                <p>Mobile app, website design</p>
+              </div>
+              <div class="info">
+                <img src="images/audio.jpg" alt="" />
+                <span>sound design</span>
+                <p>Voice Over, Beat Making</p>
+              </div>
+              <div class="info">
+                <img src="images/game.jpg" alt="" />
+                <span>game design</span>
+                <p>Character Design, Props & Objects</p>
+              </div>
+              <div class="info">
+                <img src="images/photo.jpg" alt="" />
+                <span>photography</span>
+                <p>portrait, product photography</p>
+              </div>
+              <div class="info">
+                <span>advertising</span>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+                  nulla diam in ac dictum a urna viverra morbi.
+                </p>
+                <button class="order-btn">ORDER NOW ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right_frame">
+          <div class="contrast">
+            <img src="btn_icon/contrast1.png" alt="" />
+          </div>
+          <div class="menu">
+            <div class="menu-btn">
+              <img src="btn_icon/home.png" alt="" />
+              <div class="hover">Home</div>
+            </div>
+            <div class="menu-btn">
+              <img src="btn_icon/services.png" alt="" />
+              <div class="hover">Services</div>
+            </div>
+            <div class="menu-btn">
+              <img src="btn_icon/cv.png" alt="" />
+              <div class="hover">CV</div>
+            </div>
+            <div class="menu-btn">
+              <img src="btn_icon/portfolio.png" alt="" />
+              <div class="hover">Portfolio</div>
+            </div>
+            <div class="menu-btn">
+              <img src="btn_icon/blog.png" alt="" />
+              <div class="hover">Blog</div>
+            </div>
+            <div class="menu-btn">
+              <img src="btn_icon/contact.png" alt="" />
+              <div class="hover">Contact</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

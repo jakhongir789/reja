@@ -3,9 +3,9 @@
   "profession": "Software Engineer",
   "age": 20,
   "residence": "S.Korea",
-  "adress": "S. Korea, Busan",
+  "address": "S.Korea, Busan",
   "languages": ["Uzbek", "Korean", "English"],
-  "skills": ["Html", "Css", "Js", "NodeJS", "'Python"],
+  "skills": ["Html", "Css", "Js", "NodeJS", "Python"],
   "extra skills": [
     "Bootstrap, Materialize",
     "Styling, Sass",
@@ -13,8 +13,8 @@
     "GIT Knowledge"
   ],
   "work place": "IT Company",
-  "service desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat",
-  "about me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis",
+  "service desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum",
+  "about me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.",
   "city": "Denau",
   "title": ["Flower", "Seedlings", "Gardner", "Old", "New"],
   "flower _desc": [
