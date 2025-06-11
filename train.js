@@ -1,19 +1,34 @@
 // MITASK
-// TASK A:
 
-function countLetter(letter, soz) {
+// TASK B:
+
+function countDigits(string) {
   let count = 0;
-
-  for (let i = 0; i < soz.length; i++) {
-    if (soz[i] === letter) {
+  for (let char of string) {
+    if (char >= "0" && char <= "9") {
       count++;
     }
   }
-
   return count;
 }
 
-console.log(countLetter("a", "Jack Ma Maslahatlari"));
+console.log(countDigits("kjnzxckh734892787kjhhda8789sfgb927987zxxcbjj72384"));
+
+// // TASK A:
+
+// function countLetter(letter, soz) {
+//   let count = 0;
+
+//   for (let i = 0; i < soz.length; i++) {
+//     if (soz[i] === letter) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(countLetter("a", "Jack Ma Maslahatlari"));
 
 // console.log("Jack Ma Maslahatlari");
 // const list = [
