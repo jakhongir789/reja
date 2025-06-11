@@ -2,6 +2,7 @@
 
 console.log("Web Serverni boshladik");
 const express = require("express");
+const res = require("express/lib/response");
 const app = express(); // expressni App objectini yaratdik
 const fs = require("fs");
 
@@ -32,6 +33,38 @@ app.set("view engine", "ejs"); // viewni yasash ejs orqali
 
 // 4 ROUTING Code:
 
+app.post("/create-item", (req, res) => {
+  console.log("user entered /created-item");
+
+  const new_reja = req.body.reja;
+  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.end("something went wrong");
+    } else {
+      res.end("successfully added");
+    }
+  });
+});
+
+app.get("/", function (req, res) {
+  console.log("user entered /");
+  db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+      if (err) {
+        console.log(err);
+        res.end("something went wrong");
+      } else {
+        res.render("reja", { items: data });
+      }
+    });
+});
+
+module.exports = app;
+
+// 4 ROUTING Code: "shunchaki saqlab qoyildi"
+
 ////test
 // app.get("/hello", function (req, res) {
 //   res.end(`<h1 style="background: red">Hello World by Justin</h1>`);
@@ -41,17 +74,6 @@ app.set("view engine", "ejs"); // viewni yasash ejs orqali
 //   res.end(`<h1 style="background: red">Siz sovgalar bolimidasiz</h1>`);
 // });
 
-app.post("/create-item", (req, res) => {
-  console.log(req);
-  res.json({ test: "success" });
-});
-
-app.get("/author", (req, res) => {
-  res.render("author", { user: user });
-});
-
-app.get("/", function (req, res) {
-  res.render("reja");
-});
-
-module.exports = app;
+// app.get("/author", (req, res) => {
+//   res.render("author", { user: user });
+// });
