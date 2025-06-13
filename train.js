@@ -1,18 +1,81 @@
 // MITASK
 
-// TASK B:
+// TASK C:
+const moment = require("moment");
 
-function countDigits(string) {
-  let count = 0;
-  for (let char of string) {
-    if (char >= "0" && char <= "9") {
-      count++;
+class Shop {
+  non;
+  lagmon;
+  cola;
+
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
+
+  qoldiq() {
+    const time = moment().format("HH:mm");
+    console.log(
+      `Hozir ${time}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud.`
+    );
+  }
+
+  sotish(nomi, soni) {
+    const time = moment().format("HH:mm");
+    if (nomi === "non" && this.non >= soni) {
+      this.non -= soni;
+      console.log(`Hozir ${time}da ${soni}ta non sotildi.`);
+    } else if (nomi === "lagmon" && this.lagmon >= soni) {
+      this.lagmon -= soni;
+      console.log(`Hozir ${time}da ${soni}ta lagmon sotildi.`);
+    } else if (nomi === "cola" && this.cola >= soni) {
+      this.cola -= soni;
+      console.log(`Hozir ${time}da ${soni}ta cola sotildi.`);
+    } else {
+      console.log(`Hozir ${time}da ${nomi} yetarli emas yoki nomi xato.`);
     }
   }
-  return count;
+
+  qabul(nomi, soni) {
+    const time = moment().format("HH:mm");
+    if (nomi === "non") {
+      this.non += soni;
+      console.log(`Hozir ${time}da ${soni}ta non qabul qilindi.`);
+    } else if (nomi === "lagmon") {
+      this.lagmon += soni;
+      console.log(`Hozir ${time}da ${soni}ta lagmon qabul qilindi.`);
+    } else if (nomi === "cola") {
+      this.cola += soni;
+      console.log(`Hozir ${time}da ${soni}ta cola qabul qilindi.`);
+    } else {
+      console.log(`Hozir ${time}da mahsulot nomi notogri: ${nomi}`);
+    }
+  }
 }
 
-console.log(countDigits("kjnzxckh734892787kjhhda8789sfgb927987zxxcbjj72384"));
+const shop = new Shop(6, 7, 8);
+
+shop.qoldiq();
+shop.sotish("lagmon", 3);
+shop.qabul("cola", 4);
+shop.sotish("non", 3);
+shop.sotish("cola", 5);
+shop.qoldiq();
+
+// // TASK B:
+
+// function countDigits(string) {
+//   let count = 0;
+//   for (let char of string) {
+//     if (char >= "0" && char <= "9") {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(countDigits("kjnzxckh734892787kjhhda8789sfgb927987zxxcbjj72384"));
 
 // // TASK A:
 
