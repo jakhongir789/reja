@@ -1,14 +1,16 @@
 // Express => Nodejsda web serverlarni quradigan framework.
 
 console.log("Web Serverni boshladik");
+const res = require("express/lib/response");
 const express = require("express");
-// const res = require("express/lib/response");
+
 const app = express(); // expressni App objectini yaratdik
 const fs = require("fs");
 
 // MONGODB chaqirish
 
 const db = require("./server").db();
+const mongodb = require("mongodb");
 
 let user;
 fs.readFile("database/user.json", "utf8", (err, data) => {
@@ -34,12 +36,23 @@ app.set("view engine", "ejs"); // viewni yasash ejs orqali
 // 4 ROUTING Code:
 
 app.post("/create-item", (req, res) => {
-  console.log("user entered /created-item");
+  console.log("user entered /create-item");
 
   const new_reja = req.body.reja;
   db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
     res.json(data.ops[0]);
   });
+});
+
+app.post("/delete-item", (req, res) => {
+  const id = req.body.id;
+
+  db.collection("plans").deleteOne(
+    { _id: new mongodb.ObjectId(id) },
+    function (err, data) {
+      res.json({ state: "success" });
+    }
+  );
 });
 
 app.get("/", function (req, res) {
