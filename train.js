@@ -1,68 +1,108 @@
 // MITASK
 
-// TASK C:
-const moment = require("moment");
+// TASK D:
 
-class Shop {
-  non;
-  lagmon;
-  cola;
-
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
-
-  qoldiq() {
-    const time = moment().format("HH:mm");
-    console.log(
-      `Hozir ${time}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud.`
-    );
-  }
-
-  sotish(nomi, soni) {
-    const time = moment().format("HH:mm");
-    if (nomi === "non" && this.non >= soni) {
-      this.non -= soni;
-      console.log(`Hozir ${time}da ${soni}ta non sotildi.`);
-    } else if (nomi === "lagmon" && this.lagmon >= soni) {
-      this.lagmon -= soni;
-      console.log(`Hozir ${time}da ${soni}ta lagmon sotildi.`);
-    } else if (nomi === "cola" && this.cola >= soni) {
-      this.cola -= soni;
-      console.log(`Hozir ${time}da ${soni}ta cola sotildi.`);
+function letterCount(string) {
+  let count = {};
+  for (let char of string) {
+    if (count[char]) {
+      count[char]++;
     } else {
-      console.log(`Hozir ${time}da ${nomi} yetarli emas yoki nomi xato.`);
+      count[char] = 1;
     }
   }
-
-  qabul(nomi, soni) {
-    const time = moment().format("HH:mm");
-    if (nomi === "non") {
-      this.non += soni;
-      console.log(`Hozir ${time}da ${soni}ta non qabul qilindi.`);
-    } else if (nomi === "lagmon") {
-      this.lagmon += soni;
-      console.log(`Hozir ${time}da ${soni}ta lagmon qabul qilindi.`);
-    } else if (nomi === "cola") {
-      this.cola += soni;
-      console.log(`Hozir ${time}da ${soni}ta cola qabul qilindi.`);
-    } else {
-      console.log(`Hozir ${time}da mahsulot nomi notogri: ${nomi}`);
-    }
-  }
+  return count;
 }
 
-const shop = new Shop(6, 7, 8);
+function checkContent(string1, string2) {
+  let count1 = letterCount(string1);
+  let count2 = letterCount(string2);
 
-shop.qoldiq();
-shop.sotish("lagmon", 3);
-shop.qabul("cola", 4);
-shop.sotish("non", 3);
-shop.sotish("cola", 5);
-shop.qoldiq();
+  if (Object.keys(count1).length !== Object.keys(count2).length) {
+    return false;
+  }
 
+  for (let char in count1) {
+    if (count1[char] !== count2[char]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+console.log(checkContent("mitgroup", "gmtiprou"));
+console.log(checkContent("hello", "hollo"));
+console.log(checkContent("hello", "World"));
+
+//
+//
+// TASK C:
+// const moment = require("moment");
+
+// class Shop {
+//   non;
+//   lagmon;
+//   cola;
+
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
+
+//   qoldiq() {
+//     const time = moment().format("HH:mm");
+//     console.log(
+//       `Hozir ${time}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud.`
+//     );
+//   }
+
+//   sotish(nomi, soni) {
+//     const time = moment().format("HH:mm");
+//     if (nomi === "non" && this.non >= soni) {
+//       this.non -= soni;
+//       console.log(`Hozir ${time}da ${soni}ta non sotildi.`);
+//     } else if (nomi === "lagmon" && this.lagmon >= soni) {
+//       this.lagmon -= soni;
+//       console.log(`Hozir ${time}da ${soni}ta lagmon sotildi.`);
+//     } else if (nomi === "cola" && this.cola >= soni) {
+//       this.cola -= soni;
+//       console.log(`Hozir ${time}da ${soni}ta cola sotildi.`);
+//     } else {
+//       console.log(`Hozir ${time}da ${nomi} yetarli emas yoki nomi xato.`);
+//     }
+//   }
+
+//   qabul(nomi, soni) {
+//     const time = moment().format("HH:mm");
+//     if (nomi === "non") {
+//       this.non += soni;
+//       console.log(`Hozir ${time}da ${soni}ta non qabul qilindi.`);
+//     } else if (nomi === "lagmon") {
+//       this.lagmon += soni;
+//       console.log(`Hozir ${time}da ${soni}ta lagmon qabul qilindi.`);
+//     } else if (nomi === "cola") {
+//       this.cola += soni;
+//       console.log(`Hozir ${time}da ${soni}ta cola qabul qilindi.`);
+//     } else {
+//       console.log(`Hozir ${time}da mahsulot nomi notogri: ${nomi}`);
+//     }
+//   }
+// }
+
+// const shop = new Shop(6, 7, 8);
+
+// shop.qoldiq();
+// shop.sotish("lagmon", 3);
+// shop.qabul("cola", 4);
+// shop.sotish("non", 3);
+// shop.sotish("cola", 5);
+// shop.qoldiq();
+//
+
+//
+//
 // // TASK B:
 
 // function countDigits(string) {
