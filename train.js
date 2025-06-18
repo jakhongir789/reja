@@ -1,39 +1,52 @@
 // MITASK
 
+// TASK E:
+
+function getreverse(string) {
+  let reverse = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
+  }
+  return reverse;
+}
+
+console.log(getreverse("hello world"));
+console.log(getreverse("hello"));
+
 // TASK D:
 
-function letterCount(string) {
-  let count = {};
-  for (let char of string) {
-    if (count[char]) {
-      count[char]++;
-    } else {
-      count[char] = 1;
-    }
-  }
-  return count;
-}
+// function letterCount(string) {
+//   let count = {};
+//   for (let char of string) {
+//     if (count[char]) {
+//       count[char]++;
+//     } else {
+//       count[char] = 1;
+//     }
+//   }
+//   return count;
+// }
 
-function checkContent(string1, string2) {
-  let count1 = letterCount(string1);
-  let count2 = letterCount(string2);
+// function checkContent(string1, string2) {
+//   let count1 = letterCount(string1);
+//   let count2 = letterCount(string2);
 
-  if (Object.keys(count1).length !== Object.keys(count2).length) {
-    return false;
-  }
+//   if (Object.keys(count1).length !== Object.keys(count2).length) {
+//     return false;
+//   }
 
-  for (let char in count1) {
-    if (count1[char] !== count2[char]) {
-      return false;
-    }
-  }
+//   for (let char in count1) {
+//     if (count1[char] !== count2[char]) {
+//       return false;
+//     }
+//   }
 
-  return true;
-}
+//   return true;
+// }
 
-console.log(checkContent("mitgroup", "gmtiprou"));
-console.log(checkContent("hello", "hollo"));
-console.log(checkContent("hello", "World"));
+// console.log(checkContent("mitgroup", "gmtiprou"));
+// console.log(checkContent("hello", "hollo"));
+// console.log(checkContent("hello", "World"));
 
 //
 //
