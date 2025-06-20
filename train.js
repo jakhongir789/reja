@@ -2,16 +2,36 @@
 
 // TASK E:
 
-function getreverse(string) {
-  let reverse = "";
-  for (let i = string.length - 1; i >= 0; i--) {
-    reverse += string[i];
+function findDoublers(string) {
+  let letter = {};
+  for (let char of string) {
+    if (letter[char]) {
+      return true;
+    } else {
+      letter[char] = 1;
+    }
   }
-  return reverse;
+  return false;
 }
 
-console.log(getreverse("hello world"));
-console.log(getreverse("hello"));
+console.log(findDoublers("hello"));
+console.log(findDoublers("world"));
+
+//
+//
+//
+// TASK E:
+
+// function getreverse(string) {
+//   let reverse = "";
+//   for (let i = string.length - 1; i >= 0; i--) {
+//     reverse += string[i];
+//   }
+//   return reverse;
+// }
+
+// console.log(getreverse("hello world"));
+// console.log(getreverse("hello"));
 
 // TASK D:
 
